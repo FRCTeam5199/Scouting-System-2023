@@ -1,0 +1,233 @@
+[
+    {
+        "type": "grid",
+        "column": "1/3",
+        "row": 1,
+        "elements": [
+            {
+                "type": "text",
+                "head": "Field Pieces"
+            },
+            {
+                "type": "button",
+                "name": "piece1",
+                "id": 1,
+                "options": [
+                    {
+                        "icon": "icons/cubeIcon.svg",
+                        "color": "purple"
+                    },
+                    {
+                        "icon": "icons/coneIcon.svg",
+                        "color": "goldenrod"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "name": "piece2",
+                "id": 2,
+                "options": [
+                    {
+                        "icon": "icons/coneIcon.svg",
+                        "color": "goldenrod"
+                    },
+                    {
+                        "icon": "icons/cubeIcon.svg",
+                        "color": "purple"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "name": "piece3",
+                "id": 3,
+                "options": [
+                    {
+                        "icon": "icons/coneIcon.svg",
+                        "color": "goldenrod"
+                    },
+                    {
+                        "icon": "icons/cubeIcon.svg",
+                        "color": "purple"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "name": "piece4",
+                "id": 4,
+                "options": [
+                    {
+                        "icon": "icons/cubeIcon.svg",
+                        "color": "purple"
+                    },
+                    {
+                        "icon": "icons/coneIcon.svg",
+                        "color": "goldenrod"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "grid",
+        "column": "3/5",
+        "row": 1,
+        "elements": [
+            {
+                "type": "text",
+                "head": "Starting Lane"
+            },
+            {
+                "type": "button",
+                "name": "lane",
+                "id": 1,
+                "options": [
+                    {
+                        "text": " ",
+                        "color": "black"
+                    },
+                    {
+                        "icon": "icons/armIcon.svg",
+                        "color": "black"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "name": "lane",
+                "id": 2,
+                "options": [
+                    {
+                        "text": " ",
+                        "color": "black"
+                    },
+                    {
+                        "icon": "icons/armIcon.svg",
+                        "color": "black"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "name": "lane",
+                "id": 3,
+                "options": [
+                    {
+                        "text": " ",
+                        "color": "black"
+                    },
+                    {
+                        "icon": "icons/armIcon.svg",
+                        "color": "black"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "grid",
+        "column": "5/7",
+        "row": 1,
+        "elements": [
+            {
+                "type": "text",
+                "head": "Test Buttons"
+            },
+            {
+                "type": "button",
+                "name": "test1",
+                "id": 1,
+                "options": [
+                    {
+                        "text": "Text",
+                        "color": ""
+                    },
+                    {
+                        "icon": "icons/checkBox.svg",
+                        "color": ""
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "name": "test2",
+                "id": 2,
+                "options": [
+                    {
+                        "text": "Select Me",
+                        "color": "#16478e"
+                    },
+                    {
+                        "icon": "icons/cubeIcon.svg",
+                        "color": "purple"
+                    },
+                    {
+                        "icon": "icons/coneIcon.svg",
+                        "color": "goldenrod"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "name": "test3",
+                "id": 3,
+                "options": [
+                    {
+                        "text": "1",
+                        "color": "red"
+                    },
+                    {
+                        "text": "2",
+                        "color": "goldenrod"
+                    },
+                    {
+                        "text": "3",
+                        "color": "green"
+                    },
+                    {
+                        "text": "4",
+                        "color": "blue"
+                    },
+                    {
+                        "text": "5",
+                        "color": "purple"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "name": "test3",
+                "id": 4,
+                "options": [
+                    {
+                        "text": "1",
+                        "color": "red"
+                    },
+                    {
+                        "text": "2",
+                        "color": "goldenrod"
+                    },
+                    {
+                        "text": "3",
+                        "color": "green"
+                    },
+                    {
+                        "text": "4",
+                        "color": "blue"
+                    },
+                    {
+                        "text": "5",
+                        "color": "purple"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "id": "counter"
+            }
+        ]
+    }
+
+]

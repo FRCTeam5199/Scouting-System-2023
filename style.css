@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Google Sans Regular";
+    box-sizing: border-box;
+}
+:root {
+    --elPadd: 100px;
+}
+body {
+    background-color: gray;
+}
+header {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--elPadd);
+    position: fixed;
+    transition: 0.2s;
+    z-index: 10;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo a {
+    font-size: 28px;
+    font-weight: bold;
+    color: #16478e;
+}
+.header--icon {
+    height: 60px;
+    margin: 0 10px 0 0;
+}
+.menu {
+    display: none;
+}
+nav ul {
+    display: flex;
+}
+nav ul li a {
+    display: block;
+    color: #16478e;
+    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: 0.2s;
+    margin: 0 5px;
+}
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: white;
+}
+nav ul li ul li a {
+    padding: 10px 15px;
+    margin: 5px;
+}
+nav ul li:hover ul {
+    display: block;
+    transition: 0.2s;
+}
+nav ul li a:hover {
+    background-color: #16478e;
+    color: white;
+}
+.head {
+    transform: translateX(-50%);
+}
+.head--hidden {
+    transform: translateY(-80px) translateX(-50%);
+}
+.header--hidden {
+    transform: translateY(-80px);
+}
+@media only screen and (max-width: 1500px) {
+    :root {
+        --elPadd: 50px;
+    }
+}
+@media only screen and (max-width: 1320px) {
+    :root {
+        --elPadd: 20px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .menu {
+        display: block;
+        cursor: pointer;
+    }
+    .menu .line {
+        width: 30px;
+        height: 3px;
+        background-color: #16478e;
+        margin: 6px;
+    }
+    nav {
+        height: 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: lightgrey;
+        transition: 0.2s;
+        overflow: hidden;
+    }
+    nav.active {
+        height: fit-content;
+    }
+    nav.active ul {
+        opacity: 1;
+    }
+    nav ul {
+        display: block;
+        width: fit-content;
+        margin: 20px auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    nav ul li ul {
+        position: relative;
+        margin: 0 auto;
+        background-color: lightgrey;
+        left: 40px;
+        text-align: left;
+    }
+}
+@media only screen and (max-width: 370px) {
+    .header--icon {
+        display: none;
+    }
+}
+@media only screen and (max-width: 250px) {
+    .logo a {
+        display: none;
+    }
+    .header--icon {
+        display: block;
+    }
+}
+@media only screen and (max-width: 150px) {
+    .header--icon {
+        display: none;
+    }
+}
+
+.text {padding-top: 200px;}
