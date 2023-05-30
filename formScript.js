@@ -1,3 +1,13 @@
+// API Secrets Loader
+
+const fs = require('fs');
+
+// Read the contents of the file
+const contents = fs.readFileSync('secrets.txt', 'utf-8');
+
+// Extract the secret value
+const secretKey = contents.trim();
+
 // API - Team Numbers per Match
 const scouterInputs = document.getElementsByName('scouter');
 const matchInput = document.getElementsByName('match')[0];
@@ -18,7 +28,7 @@ matchInput.addEventListener("input", getTeams);
 
 
 function getTeams() {
-    const apiKey = "WK7thdZDs2t0MyZEfmpaAdgUqpBn0CNsPmE4JyzigzpdYZz0EudEr7Ie9HI3Obxe";
+    const apiKey = secretKey;
     const eventKey = "2023gal";
     const matchNumber = parseInt(document.getElementsByName('match')[0].value);
 
@@ -82,7 +92,7 @@ function getHeader() {
           }
           var teamKey = document.getElementById(value).textContent;
           var year = "2023";
-          var apiKey = "WK7thdZDs2t0MyZEfmpaAdgUqpBn0CNsPmE4JyzigzpdYZz0EudEr7Ie9HI3Obxe";
+          var apiKey = secretKey;
           var url = "https://www.thebluealliance.com/api/v3/team/frc" + teamKey + "/media/" + year + "?X-TBA-Auth-Key=" + apiKey;
           fetch("https://www.thebluealliance.com/api/v3/team/frc" + teamKey + "?X-TBA-Auth-Key=" + apiKey)
             .then(response => response.json())
