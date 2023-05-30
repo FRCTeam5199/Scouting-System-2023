@@ -9,7 +9,10 @@ The entire system including the database storage, server-hosting program, and ht
 The form can be used to collect a variety of information, including team, robot, and performance data. It is whatever the designer needs it for. This information can be used to evaluate the performance of individual teams and robots and to make informed decisions about our pick list. The system will also be able to have its own chrting software in order to analize data on the site itself. 
 
 # Program dependencies:
-The entire system has no dependencies other than a Windows computer to run on. A Internet connection is not necessary. However if you do want to utilize the form hosting server, it must be connected to the other devices using a local network. When loading the system for the first time you must make sure that the file php.zip and apache.zip is extracted in the same root folder. In order to do this simply righ-click on the zip files and select 'Extract Here' you only need to do this once, and if the folder is succesfully extracted you can delete the zip file.
+The entire system has no dependencies other than a Windows computer to run on. A Internet connection is not necessary. However if you do want to utilize the form hosting server, it must be connected to the other devices using a local network. When loading the system for the first time you must make sure that the file php.zip and apache.zip is extracted in the same root folder. In order to do this simply righ-click on the zip files and select 'Extract Here' you only need to do this once, and if the folder is succesfully extracted you can delete the zip file. 
+
+#Blue Alliance API
+This system, when connected to the interenet, interfaces with and gets usefull data from the Blue Alliance API. Aspects of the site are **Powered by the Blue Alliance** and help this site with data validation, grabbing teams by event and match. As well as getting many key team, event, and match details and scoring. See their amazing site here at https://thebluealliance.com  
 
 # HTML Form:
 The html form is in a .php file for server hosting, but contains regular html formatting with some JavaScript, CSS and aditional PHP code. The site is based on the 2023 Season FRC Game and has multiple questions, buttons, toggles, and selection GUI's for the purpose of maximum data collection for the purpose of scouting data.
