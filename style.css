@@ -8,6 +8,10 @@
 }
 :root {
     --elPadd: 100px;
+    --FRCred: #ED1C24;
+    --FRCblue:  #0066B3;
+    --FRCgray: #9A989A;
+    --FRCblack: #231F20;
 }
 body {
     background-color: gray;

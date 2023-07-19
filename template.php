@@ -58,6 +58,10 @@
     </header>
     <script src="navBar.js"></script>
     <div class="text" style="height: 400vh; background-color: #16478e;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur tenetur, quis nihil rerum quibusdam nisi perspiciatis eum quasi ea vel, maiores sunt consequuntur quo quidem perferendis iure odit minus? Magni.</div> 
-
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+        }
+    </script>
 </body>
 </html>

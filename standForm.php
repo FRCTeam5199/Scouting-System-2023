@@ -67,39 +67,39 @@
         <!--Match Info-->
         <section style="grid-template-columns: 1fr;">
             <div class="grid" style="grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(3, 1fr);">
-                <label class="button">
+                <label class="button button--style">
                     <input type="radio" value="r1" name="scouter">
                     <span class="piece" style="background-color: red;"></span>
                     <strong id="r1">Red&nbsp;1</strong>
                 </label>
-                <label class="button">
+                <label class="button button--style">
                     <input type="radio" value="r2" name="scouter">
                     <span class="piece" style="background-color: red;"></span>
                     <strong id="r2">Red&nbsp;2</strong>
                 </label>
-                <label class="button">
+                <label class="button button--style">
                     <input type="radio" value="r3" name="scouter">
                     <span class="piece" style="background-color: red;"></span>
                     <strong id="r3">Red&nbsp;3</strong>
                 </label>
                 <input type="text" placeholder="Scouter Name" name="name" style="grid-column: 4/6;" class="input" autocomplete="given-name">
-                <label class="button">
+                <label class="button button--style">
                     <input type="radio" value="b1" name="scouter">
                     <span class="piece" style="background-color: #16478e;"></span>
                     <strong id="b1">Blue&nbsp;1</strong>
                 </label>
-                <label class="button">
+                <label class="button button--style">
                     <input type="radio" value="b2" name="scouter">
                     <span class="piece" style="background-color: #16478e;"></span>
                     <strong id="b2">Blue&nbsp;2</strong>
                 </label>
-                <label class="button">
+                <label class="button button--style">
                     <input type="radio" value="b3" name="scouter">
                     <span class="piece" style="background-color: #16478e;"></span>
                     <strong id="b3">Blue&nbsp;3</strong>
                 </label>
                 <input type="number" placeholder="Match Number" name="match" id="match" style="grid-column: 4/6;" class="input" min="0" pattern="[0-9]*" autocomplete="off">
-                <label class="button" style="grid-column: 1/4;">
+                <label class="button button--style" style="grid-column: 1/4;">
                     <input type="checkbox" value="noShow" name="noShow">
                     <span class="piece" style="background-color: black;"></span>
                     <strong id="nS">Not on Field</strong>
@@ -119,6 +119,10 @@
     <script src="navBar.js"></script>
     <script src="formConfig.js"></script>    
     <script src="formScript.js"></script>
-
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+        }
+    </script>
 </body>
 </html>

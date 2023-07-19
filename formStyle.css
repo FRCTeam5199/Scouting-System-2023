@@ -19,10 +19,15 @@ section {
     width: fit-content;
 }
 .img {
-    margin: auto;
+    height: auto;
+    width: auto;
+    display: block;
+    border-radius: 20px;
+    max-height: 35vh;
+    max-width: 100%;
 }
 .grid {
-    max-width: 90%;
+    max-width: 100%;
     min-width: min-content;
     width: fit-content;
     margin: 10px auto;
@@ -37,7 +42,6 @@ section {
     border-radius: 20px;
     width: 90%;
     text-align: center;
-    min-width: 13ex;
 }
 .text {
     padding: 5px;
@@ -49,34 +53,33 @@ section {
     display: block;
     position: relative;
     cursor: pointer;
-    background-color: gray;
     margin: .25em auto;
     padding: .5em;
-    border-radius: 20px;
-    width: 90%;
+    min-height: 2.25em;
     height: fit-content;
     text-align: center;
-    color: white;
-    list-style: none;
-    text-decoration: none;
     font-family: "Google Sans Regular";
     box-sizing: border-box;
 }
+.button--style {
+    width: 90%;
+    min-width: 7.5ex;
+    background-color: gray;
+    border-radius: 20px;
+    color: white;
+}
+
 .button * {
+    max-height: 2em;
     display: none;
-    position: relative;
+    position: relative;  
+    margin: auto;
+}
+.button span {
+    max-height: 2.5em;
 }
 label.button * {
     display: block;
-}
-.button img {
-    margin: auto;
-    height: 2em;
-}
-.button {
-    min-width: 7.5ex;
-    height: 2.25em;
-    padding: auto 5px;
 }
 .button input { 
     position: absolute;

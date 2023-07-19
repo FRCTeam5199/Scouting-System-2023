@@ -16,7 +16,11 @@ fetch("formStructure.json")
         field.elements.forEach(function(element) {
           if (element.type === "button") {
             var button = document.createElement("button");
-            button.className = "button";
+            if (element.class === "button") {
+              button.className = "button button--style";
+            } else {
+              button.className = "button";
+            }
             button.id = element.id || "";
             button.name = element.name || "";
             button.type = "button";
@@ -49,6 +53,7 @@ fetch("formStructure.json")
                 event.preventDefault();
                 counterDown(button);
               })
+              button.style.backgroundColor = element.color;
               button.value = 0;
               button.Prefix = element.prefix;
               button.suffix = element.suffix;
@@ -129,11 +134,9 @@ fetch("formStructure.json")
               text.className = "text";
               text.style.color = element.color;
               div.appendChild(text);
-
             }
             grid.appendChild(div);
-          }
-          else if (element.type === "input") {
+          } else if (element.type === "input") {
             var input = document.createElement("input");
             input.type = element.class;
             input.className = "input";
@@ -150,14 +153,78 @@ fetch("formStructure.json")
             }
             grid.appendChild(input)
           } else if (element.type === "img") {
+            var div = document.createElement("div");
+            div.style.width = "100%";
+            div.style.height = "100%";
+            div.style.display = "grid"
             var img = document.createElement("img");
             img.src = element.src;
             img.className = "img";
-            img.style.height = (element.size || 20) + "vh";
             img.id = element.id || "";
             img.name = element.name || "";
-            grid.appendChild(img)
-          }
+            img.style.gridArea = "1 / 1";
+            div.appendChild(img);
+            if (element.buttons) {
+              img.buttons = element.buttons;
+              img.buttons.forEach(function(buttonElem) {
+                var button = document.createElement("button");
+                if (buttonElem.class === "button") {
+                  button.className = "button button--style";
+                } else {
+                  button.className = "button";
+                }
+                button.id = buttonElem.id || "";
+                button.name = buttonElem.name || "";
+                button.type = "button";
+                button.style.margin = "auto";
+                button.style.gridArea = "1 / 1";
+                button.style.height = buttonElem.height || "25%";
+                button.style.width = buttonElem.width || "16.5%";
+                button.style.top = buttonElem.top;
+                button.style.left = buttonElem.left;
+                button.style.padding = "0";
+                button.style.minHeight = "0";
+                if (buttonElem.options) {
+                  button.options = buttonElem.options;
+                  button.options.forEach(function(option) {
+                    if (option.text) {
+                      var optionElem = document.createElement("strong");
+                      optionElem.innerText = option.text || "";
+                      button.appendChild(optionElem);
+                    } else if (option.icon) {
+                      var optionElem = document.createElement("img");
+                      optionElem.src = option.icon;
+                      optionElem.style.maxHeight = "100%";
+                      optionElem.style.height = "100%";
+                      button.appendChild(optionElem)
+                    }
+                  });
+                  button.style.backgroundColor = button.options[0].color || "";
+                  button.children[0].style.display = "block";
+                  button.count = buttonElem.options.length
+                  button.addEventListener("click", function() {
+                    trigger(button);
+                  })
+                } else {
+                  button.addEventListener("click", function() {
+                    counter(button);
+                  })
+                  button.addEventListener("contextmenu", function() {
+                    event.preventDefault();
+                    counterDown(button);
+                  })
+                  button.style.backgroundColor = buttonElem.color;
+                  button.value = 0;
+                  button.Prefix = buttonElem.prefix;
+                  button.suffix = buttonElem.suffix;
+                  button.innerHTML = (button.Prefix  || "") + " " + button.value + " " + (button.suffix || "");
+                }
+                
+                div.appendChild(button)
+              });
+            }
+            grid.appendChild(div);
+          } 
         });
         formContainer.appendChild(grid);
       }
