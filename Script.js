@@ -1,4 +1,4 @@
-fetch("secrets.txt")
+fetch("secret.txt")
   .then(response => response.text())
   .then(data => {
     const secretKey = data.trim();
@@ -21,6 +21,39 @@ fetch("secrets.txt")
 
     teamInput.addEventListener("input", getHeader); 
     matchInput.addEventListener("input", getTeams); 
+
+
+    //Input Storage Update
+
+    function logInputChange(event) {
+      var inputElement = event.target;
+      var id = inputElement.id || "inputID";
+      var name = inputElement.name || "inputName";
+      var value = inputElement.value;
+
+      sessionStorage.setItem(window.location.href+"|"+name+"|"+id, value);
+      
+      const scoutName = sessionStorage.getItem(window.location.href+"|"+"name|name");
+      localStorage.setItem(window.location.href+"|"+"name|name", scoutName);
+    }
+
+    var inputElements = document.querySelectorAll('input');
+
+    inputElements.forEach(function(inputElement) {
+      inputElement.addEventListener('input', logInputChange);
+    });
+
+    //On Load Function 
+
+    function windowLoaded() {
+      document.getElementById('name').value = localStorage.getItem(window.location.href+"|"+"name|name");
+      // You can perform other actions here after the window has loaded
+    }
+
+    // Attach the onload event to the window object
+    window.onload = windowLoaded;
+
+
 
 
     function getTeams() {
@@ -112,6 +145,8 @@ fetch("secrets.txt")
     console.error('Error fetching secret:', error);
   });
 
+
+
 // Button Cycling
 function trigger(button) {
   var buttons = document.querySelectorAll('[name="' + button.name + '"]');
@@ -125,8 +160,10 @@ function trigger(button) {
       var num = btn.value;
       num++;
       btn.value = num % (button.count || 2);
+      sessionStorage.setItem(window.location.href+"|"+btn.name+"|"+btn.id, btn.value);
     } else {
       btn.value = 0;
+      sessionStorage.setItem(window.location.href+"|"+btn.name+"|"+btn.id, btn.value);
     }
     btn.style.backgroundColor = buttons[i].options[btn.value].color || "";
     btn.children[btn.value].style.display = "block";
@@ -138,6 +175,8 @@ function counter(button) {
     num++;
     btn.value = num;
     btn.innerHTML = (button.Prefix  || "") + " " + button.value + " " + (button.suffix || "");
+    sessionStorage.setItem(window.location.href+"|"+btn.name+"|"+btn.id, btn.value);
+
 }
 function counterDown(button) {
   var btn = button;
@@ -147,4 +186,6 @@ function counterDown(button) {
     }
     btn.value = num;
     btn.innerHTML = (button.Prefix  || "") + " " + button.value + " " + (button.suffix || "");
+    sessionStorage.setItem(window.location.href+"|"+btn.name+"|"+btn.id, btn.value);
+
 }

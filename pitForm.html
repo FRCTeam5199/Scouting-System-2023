@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Icons/5199Icon.png">
+    <title>Stand Scouting</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="formStyle.css">
+
+</head>
+</head>
+<body>
+    <!--NavBar-->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="icons/5199Icon.png" class="header--icon"></a>
+            <a href="index.html">5199 Strategy Site</a>
+        </div>
+        <div class="menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Stand Scouting</a>
+                    <ul>
+                        <li>
+                            <a href="standForm.html">Stand Form</a>
+                            <a href="#">Scouter Schedule</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Pit Scouting</a>
+                    <ul>
+                        <li>
+                            <a href="pitForm.html">Pit Form</a>
+                            <a href="#">Picture Upload</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">QR Scanner</a></li>
+                <li><a href="#">Data Analysis</a>
+                    <ul>
+                        <li>
+                            <a href="#">Match Analysis</a>
+                            <a href="#">Team Analysis</a>
+                            <a href="#">Team Compairison</a>
+                            <a href="#">Data Validation</a>
+    
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Config</a>
+                </li>
+            </ul>
+        </nav>         
+    </header>
+    <!--Form-->
+    <form>
+        
+        <section id="autoInfo">
+            
+        </section>
+
+    
+        
+        
+        <!--Download and Clear sessionStorage
+        <button type="button" onclick="clearSessionStorage()">Clear Session Storage</button>
+        <script> // Function to clear all items in sessionStorage
+            function clearSessionStorage() {
+                sessionStorage.clear();
+                console.log("Session Storage has been cleared.");
+            }
+        </script>
+          <button onclick="downloadSessionStorageAsCSV()">Download CSV</button>
+
+          <script>
+            // Function to convert sessionStorage data to CSV format
+            function convertToCSV() {
+              const keys = Object.keys(sessionStorage);
+        
+              // Create the first row with keys
+              const csvContent = keys.join(",") + "\n";
+        
+              // Create the second row with values
+              const values = keys.map((key) => sessionStorage.getItem(key));
+              return csvContent + values.join(",");
+            }
+        
+            // Function to trigger the CSV download
+            function downloadSessionStorageAsCSV() {
+              // Convert sessionStorage data to CSV format
+              const csvData = convertToCSV();
+        
+              // Check if "ScoutingData.csv" already exists in sessionStorage
+              const existingData = sessionStorage.getItem("ScoutingData.csv");
+        
+              if (existingData) {
+                // Combine existing data and new data
+                const updatedData = existingData + "\n" + csvData;
+                // Update sessionStorage with the combined data
+                sessionStorage.setItem("ScoutingData.csv", updatedData);
+              } else {
+                // Create a new file entry in sessionStorage with the keys as the first row
+                sessionStorage.setItem("ScoutingData.csv", csvData);
+              }
+        
+              // Create a Blob with the updated CSV data
+              const blob = new Blob([sessionStorage.getItem("ScoutingData.csv")], {
+                type: "text/csv",
+              });
+        
+              // Create a download link
+              const url = URL.createObjectURL(blob);
+              const link = document.createElement("a");
+              link.href = url;
+        
+              // Set the filename for the download
+              link.setAttribute("download", "ScoutingData.csv");
+        
+              // Append the link to the document and trigger the download
+              document.body.appendChild(link);
+              link.click();
+        
+              // Cleanup the URL and remove the link element
+              URL.revokeObjectURL(url);
+              document.body.removeChild(link);
+            }
+          </script>
+        -->
+        
+
+
+    </form>
+    <script src="navBar.js"></script>
+    <script src="pitformConfig.js"></script>    
+    <script src="Script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+        }
+    </script>
+</body>
+</html>

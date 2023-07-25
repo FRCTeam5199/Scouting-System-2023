@@ -11,7 +11,7 @@
             {
                 "type": "button",
                 "class": "button",
-                "name": "piece1",
+                "name": "piece",
                 "id": 1,
                 "options": [
                     {
@@ -250,6 +250,10 @@
                     {
                         "text": "5",
                         "color": "purple"
+                    },
+                    {
+                        "text": "6",
+                        "color": "#777"
                     }
                 ]
             },

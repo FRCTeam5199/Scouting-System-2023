@@ -1,4 +1,4 @@
-fetch("formStructure.json")
+fetch("standformStructure.json")
   .then(response => response.json())
   .then(formStructure => {
   var formContainer = document.getElementById("autoInfo");
@@ -122,6 +122,8 @@ fetch("formStructure.json")
             var div = document.createElement("div");
             div.style.height = "min-content";
             div.style.margin = "auto";
+            div.style.gridRow = element.row || "";
+            div.style.gridColumn = element.column || "";
             if (element.head) {
               var head = document.createElement("h1");
               head.innerText = element.head;
@@ -138,7 +140,7 @@ fetch("formStructure.json")
             grid.appendChild(div);
           } else if (element.type === "input") {
             var input = document.createElement("input");
-            input.type = element.class;
+            input.type = element.class || "text";
             input.className = "input";
             input.name = element.name || "";
             input.placeholder = element.placeholder || "";
@@ -146,6 +148,8 @@ fetch("formStructure.json")
             input.pattern = element.pattern || "";
             input.min = element.min || "";
             input.max = element.max || "";
+            input.style.gridRow = element.row || "";
+            input.style.gridColumn = element.column || "";
             if (element.class === "file") {
               input.type = "file";
               input.multiple = true;
